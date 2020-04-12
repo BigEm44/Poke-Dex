@@ -3,10 +3,11 @@ import { PokemonFilterContext } from '../context/PokemonFilterContext';
 import FilterPokemons from './FilterPokemons';
 
 const Header = () => {
-  const { menu, menuToggle } = useContext(PokemonFilterContext);
+  const { menu, menuToggle, setTypeFilter } = useContext(PokemonFilterContext);
   return (
     <div className="header">
-      <button onClick={menuToggle}>
+      <h1>Pokedex</h1>
+      <button onClick={() => menuToggle()}>
         {menu ? 'Close Menu' : 'Find Pokemon'}
       </button>
       {menu ? <FilterPokemons /> : <React.Fragment />}

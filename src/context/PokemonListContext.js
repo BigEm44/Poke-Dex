@@ -7,7 +7,8 @@ const PokemonListContextProvider = (props) => {
   const [nextPage, setNextPage] = useState('');
   const [prevPage, setPrevPage] = useState('');
   const [loading, setLoading] = useState(true);
-  const api = 'https://pokeapi.co/api/v2/pokemon';
+  const initialApi = 'https://pokeapi.co/api/v2/pokemon';
+  const filterApi = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=200';
 
   async function getAllPokemon(api) {
     return new Promise((resolve, reject) => {
@@ -40,7 +41,8 @@ const PokemonListContextProvider = (props) => {
         nextPage,
         prevPage,
         loading,
-        api,
+        initialApi,
+        filterApi,
         setPokemons,
         setNextPage,
         setPrevPage,

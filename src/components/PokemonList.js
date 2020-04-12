@@ -5,11 +5,13 @@ import { PokemonFilterContext } from '../context/PokemonFilterContext';
 
 const PokemonList = () => {
   const {
+    api,
+    initialApi,
+    filterApi,
     pokemons,
     nextPage,
     prevPage,
     loading,
-    api,
     setPokemons,
     setNextPage,
     setPrevPage,
@@ -18,11 +20,34 @@ const PokemonList = () => {
     getAllPokemon,
     getFilterPokemon,
   } = useContext(PokemonListContext);
-  const { typeFilter, menuToggle } = useContext(PokemonFilterContext);
+  const {
+    typeFilter,
+    setTypeFilter,
+    abilityFilter,
+    menuToggle,
+    typeForm,
+    setTypeForm,
+    abilityForm,
+  } = useContext(PokemonFilterContext);
 
   useEffect(() => {
+    console.log(api);
+
     async function fetchData() {
-      let response = await getAllPokemon(api);
+      //console.log(url);
+      // console.log(filterApi);
+      // console.log(initialApi);
+
+      // let response = await getAllPokemon(url);
+      let response =
+        typeFilter || abilityFilter
+          ? await getAllPokemon(filterApi)
+          : await getAllPokemon(initialApi);
+      console.log(filterApi);
+      console.log(initialApi);
+      // let response = await getAllPokemon(
+      //   'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=104'
+      // );
       setNextPage(response.next);
       setPrevPage(response.previous);
       //let pokemon = await loadingPokemon(response.results); -tak było oryginalnie
@@ -30,7 +55,7 @@ const PokemonList = () => {
       setLoading(false);
     }
     fetchData();
-  }, [typeFilter]);
+  }, [typeFilter, abilityFilter]);
 
   const next = async () => {
     setLoading(true);
@@ -52,33 +77,38 @@ const PokemonList = () => {
   };
 
   const loadingPokemon = async (data) => {
-    console.log(typeFilter);
-
     let singlePokemon = await Promise.all(
       data.map(async (pokemon) => {
         let pokemonRecord = await getPokemon(pokemon.url);
         return pokemonRecord;
       })
     );
-    //TO-DO przypisać do funkcji, a nie console.loga,
-    {
-      typeFilter
-        ? console.log(
-            singlePokemon.filter((type) =>
-              type.types.find((el) => el.type.name === 'poison')
-            )
-          )
-        : console.log(singlePokemon);
-    }
-    singlePokemon = singlePokemon.filter((type) =>
-      type.types.find((el) => el.type.name === 'poison')
+
+    console.log(
+      singlePokemon.filter((ability) =>
+        ability.abilities.find((el) => el.ability.name === abilityForm)
+      )
     );
-    //singlePokemon = singlePokemon.filter((el) => el.name === 'bulbasaur');
-    setPokemons(singlePokemon);
+    //TO-DO CHANGE IN SWITCH
+    if (typeFilter) {
+      setPokemons(
+        singlePokemon.filter((type) =>
+          type.types.find((el) => el.type.name === typeForm)
+        )
+      );
+    } else if (abilityFilter) {
+      setPokemons(
+        singlePokemon.filter((ability) =>
+          ability.abilities.find((el) => el.ability.name === abilityForm)
+        )
+      );
+    } else {
+      setPokemons(singlePokemon);
+    }
   };
 
   return (
-    <div>
+    <div className="wrapper">
       {loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -87,7 +117,7 @@ const PokemonList = () => {
             <button onClick={prev}>Prev</button>
             <button onClick={next}>Next</button>
           </div>
-          <div className="">
+          <div className="pokemonList">
             {pokemons.map((pokemon, index) => {
               return <PokemonListDetails key={index} pokemon={pokemon} />;
             })}

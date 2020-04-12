@@ -9,54 +9,65 @@ const FilterPokemons = () => {
     setMenuToggle,
     menuToggle,
     pokemonTypes,
+    typeForm,
+    abilityForm,
     typeFilter,
     pokemonAbilities,
-    choosenPokemonType,
-    setChoosenPokemonType,
+    handleTypeChange,
+    handleTypeSubmit,
+    handleAbilityChange,
+    handleAbilitySubmit,
     setTypeFilter,
     setPokemonAbilities,
   } = useContext(PokemonFilterContext);
 
-  //console.log(pokemonTypes);
-  console.log(choosenPokemonType);
-  // console.log(typeFilter);
   return (
     <div className="filterPokemon">
-      <div
-        onClick={() => setMenuToggle(false)}
-        className="filterPokemon__closeBtn"
-      >
-        x
-      </div>
       <h2>Find your Pokemon</h2>
       <div className="filterPokemon__category">
-        <h3>Choose type</h3>
-        <ul className="filterPokemon__category--type">
-          {pokemonTypes.map((type) => {
-            return (
-              <li
-                key={type.id}
-                onClick={() => setChoosenPokemonType(type.name)}
+        <div className="filterPokemon__category--type">
+          <form onSubmit={handleTypeSubmit}>
+            <label>
+              Choose type:
+              <select
+                name="pokemonType"
+                onChange={handleTypeChange}
+                value={typeForm}
               >
-                {type.name}
-              </li>
-            );
-          })}
-        </ul>
-        <h3>Choose ability</h3>
-        <ul className="filterPokemon__category--ability">
-          {pokemonAbilities.map((ability) => {
-            return <li key={ability.id}>{ability.name}</li>;
-          })}
-        </ul>
-        <button
-          onClick={() => menuToggle(setTypeFilter(true))}
-          className="filterPokemon__applyBtn"
-        >
-          Apply
-        </button>
+                {pokemonTypes.map((type) => {
+                  return (
+                    <option key={type.id} value={type.name}>
+                      {type.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </label>
+            <input type="submit" value="Apply" />
+          </form>
+        </div>
+        <div className="filterPokemon__category--ability">
+          <form onSubmit={handleAbilitySubmit}>
+            <label>
+              Choose ability:
+              <select
+                name="pokemonAbility"
+                onChange={handleAbilityChange}
+                value={abilityForm}
+              >
+                {pokemonAbilities.map((ability) => {
+                  return (
+                    <option key={ability.id} value={ability.name}>
+                      {ability.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </label>
+            <input type="submit" value="Apply" />
+          </form>
+        </div>
       </div>
-      <div></div>
     </div>
   );
 };

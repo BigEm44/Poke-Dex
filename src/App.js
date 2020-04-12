@@ -6,7 +6,7 @@ import PokemonFilterContextProvider from './context/PokemonFilterContext';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <PokemonListContextProvider>
         <PokemonFilterContextProvider>
           <Header />

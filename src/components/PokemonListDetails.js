@@ -1,8 +1,6 @@
 import React from 'react';
 
 const PokemonListDetails = ({ pokemon }) => {
-  // console.log(pokemon);
-  // pokemon.filter((el) => el.name);
   return (
     <div className="pokemonListDetails">
       <h2 className="pokemonListDetails__name">{pokemon.name}</h2>
@@ -19,8 +17,8 @@ const PokemonListDetails = ({ pokemon }) => {
           <p>{pokemon.weight}</p>
         </div>
       </div>
+      <h3>Type:</h3>
       <div className="pokemonListDetails__types">
-        <h3>Type:</h3>
         {pokemon.types.map((type, index) => {
           return (
             <div className="pokemonListDetails__type" key={index}>
@@ -29,8 +27,8 @@ const PokemonListDetails = ({ pokemon }) => {
           );
         })}
       </div>
+      <h3>Ability:</h3>
       <div className="pokemonListDetails__abilities">
-        <h3>Ability:</h3>
         {pokemon.abilities.map((ability, index) => {
           return (
             <div className="pokemoneListDetails__ability" key={index}>

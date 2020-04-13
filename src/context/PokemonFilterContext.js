@@ -52,7 +52,7 @@ const PokemonFilterContextProvider = (props) => {
     { name: 'inner-focus', id: 12 },
     { name: 'insomnia', id: 13 },
     { name: 'intimidate', id: 14 },
-    { name: 'keen-eye', id: 14 },
+    { name: 'keen-eye', id: 15 },
     { name: 'leaf-guard', id: 16 },
     { name: 'oblivious', id: 17 },
     { name: 'overgrow', id: 18 },
@@ -72,6 +72,14 @@ const PokemonFilterContextProvider = (props) => {
     setMenuToggle(false);
     setAbilityFilter(true);
   };
+  const [nameForm, setNameForm] = useState('');
+  const [nameFilter, setNameFilter] = useState(false);
+  const handleNameChange = (e) => setNameForm(e.target.value);
+  const handleNameSubmit = (e) => {
+    e.preventDefault();
+    setMenuToggle(false);
+    setNameFilter(true);
+  };
 
   return (
     <PokemonFilterContext.Provider
@@ -83,6 +91,8 @@ const PokemonFilterContextProvider = (props) => {
         pokemonAbilities,
         abilityForm,
         abilityFilter,
+        nameForm,
+        nameFilter,
         setMenuToggle,
         menuToggle,
         setTypeFilter,
@@ -92,6 +102,8 @@ const PokemonFilterContextProvider = (props) => {
         handleTypeSubmit,
         handleAbilityChange,
         handleAbilitySubmit,
+        handleNameChange,
+        handleNameSubmit,
       }}
     >
       {props.children}

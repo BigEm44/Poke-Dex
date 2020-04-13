@@ -1,0 +1,17 @@
+.header {
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100vw;
+  background-color: lightgrey;
+  h1 {
+  }
+  button {
+  }
+}

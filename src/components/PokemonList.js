@@ -24,38 +24,29 @@ const PokemonList = () => {
     typeFilter,
     setTypeFilter,
     abilityFilter,
+    nameFilter,
     menuToggle,
     typeForm,
     setTypeForm,
     abilityForm,
+    nameForm,
   } = useContext(PokemonFilterContext);
 
   useEffect(() => {
     console.log(api);
 
     async function fetchData() {
-      //console.log(url);
-      // console.log(filterApi);
-      // console.log(initialApi);
-
-      // let response = await getAllPokemon(url);
       let response =
-        typeFilter || abilityFilter
+        typeFilter || abilityFilter || nameFilter
           ? await getAllPokemon(filterApi)
           : await getAllPokemon(initialApi);
-      console.log(filterApi);
-      console.log(initialApi);
-      // let response = await getAllPokemon(
-      //   'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=104'
-      // );
       setNextPage(response.next);
       setPrevPage(response.previous);
-      //let pokemon = await loadingPokemon(response.results); -tak było oryginalnie
       await loadingPokemon(response.results);
       setLoading(false);
     }
     fetchData();
-  }, [typeFilter, abilityFilter]);
+  }, [typeFilter, abilityFilter, nameFilter]);
 
   const next = async () => {
     setLoading(true);
@@ -84,33 +75,35 @@ const PokemonList = () => {
       })
     );
 
-    console.log(
-      singlePokemon.filter((ability) =>
-        ability.abilities.find((el) => el.ability.name === abilityForm)
-      )
-    );
-    //TO-DO CHANGE IN SWITCH
-    if (typeFilter) {
-      setPokemons(
-        singlePokemon.filter((type) =>
-          type.types.find((el) => el.type.name === typeForm)
-        )
-      );
-    } else if (abilityFilter) {
-      setPokemons(
-        singlePokemon.filter((ability) =>
-          ability.abilities.find((el) => el.ability.name === abilityForm)
-        )
-      );
-    } else {
-      setPokemons(singlePokemon);
+    //console.log(singlePokemon.filter((name) => name.name === nameForm));
+
+    switch (true) {
+      case typeFilter:
+        setPokemons(
+          singlePokemon.filter((type) =>
+            type.types.find((el) => el.type.name === typeForm)
+          )
+        );
+        break;
+      case abilityFilter:
+        setPokemons(
+          singlePokemon.filter((ability) =>
+            ability.abilities.find((el) => el.ability.name === abilityForm)
+          )
+        );
+        break;
+      case nameFilter:
+        setPokemons(singlePokemon.filter((name) => name.name === nameForm));
+        break;
+      default:
+        setPokemons(singlePokemon);
     }
   };
 
   return (
     <div className="wrapper">
       {loading ? (
-        <h1>Loading...</h1>
+        <h2>Loading...</h2>
       ) : (
         <>
           <div className="btn">

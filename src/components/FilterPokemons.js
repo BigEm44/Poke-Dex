@@ -12,19 +12,35 @@ const FilterPokemons = () => {
     typeForm,
     abilityForm,
     typeFilter,
+    nameForm,
+    nameFilter,
     pokemonAbilities,
     handleTypeChange,
     handleTypeSubmit,
     handleAbilityChange,
     handleAbilitySubmit,
+    handleNameChange,
+    handleNameSubmit,
     setTypeFilter,
     setPokemonAbilities,
   } = useContext(PokemonFilterContext);
-
+  console.log(nameForm);
   return (
     <div className="filterPokemon">
-      <h2>Find your Pokemon</h2>
       <div className="filterPokemon__category">
+        <div className="filterPokemon__category--name">
+          <form onSubmit={handleNameSubmit}>
+            <label>
+              Enter pokemon name
+              <input
+                type="text"
+                name="pokemonName"
+                onChange={handleNameChange}
+              ></input>
+              <button>Apply</button>
+            </label>
+          </form>
+        </div>
         <div className="filterPokemon__category--type">
           <form onSubmit={handleTypeSubmit}>
             <label>
@@ -68,6 +84,19 @@ const FilterPokemons = () => {
           </form>
         </div>
       </div>
+      {/* <div className="filterPokemon__nameFilter">
+        <form onSubmit={handleNameSubmit}>
+          <label>
+            Enter pokemon name
+            <input
+              type="text"
+              name="pokemonName"
+              onChange={handleNameChange}
+            ></input>
+            <button>Apply</button>
+          </label>
+        </form>
+      </div> */}
     </div>
   );
 };

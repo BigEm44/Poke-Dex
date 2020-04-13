@@ -1,9 +1,29 @@
 .wrapper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .navigateButtons {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    margin-top: 16vh;
+    button {
+      width: 45vw;
+      margin: 0.75vh;
+      height: 4vh;
+      font-size: 1.3rem;
+      @include button;
+    }
+  }
   .pokemonList {
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
-            justify-content: center;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-top: 2vh;
   }
 }

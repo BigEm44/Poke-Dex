@@ -10,6 +10,7 @@ const PokemonFilterContextProvider = (props) => {
     setAbilityFilter(false);
   };
   const pokemonTypes = [
+    { name: 'choose', id: 0 },
     { name: 'normal', id: 1 },
     { name: 'fighting', id: 2 },
     { name: 'poison', id: 3 },
@@ -35,6 +36,7 @@ const PokemonFilterContextProvider = (props) => {
     e.preventDefault();
     setMenuToggle(false);
     setTypeFilter(true);
+    if (typeForm === 'choose') return;
   };
   const pokemonAbilities = [
     { name: 'choose', id: 0 },

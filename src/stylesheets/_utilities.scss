@@ -1,0 +1,57 @@
+$blue: rgb(59, 76, 202);
+$yellow: rgb(255, 222, 0);
+$darkYellow: rgb(179, 161, 37);
+$green: rgb(137, 200, 147);
+$lightGreen: rgb(146, 209, 179);
+$darkGreen: rgb(73, 137, 111);
+$red: rgb(192, 76, 75);
+$pink: rgb(245, 155, 173);
+$lightPink: rgb(249, 219, 227);
+$linien: rgb(252, 240, 222);
+$orange: rgb(244, 177, 133);
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+
+@mixin button {
+  font-weight: bold;
+  color: $blue;
+  background-color: $white;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: $blue;
+    color: white;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+
+@mixin layout {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  justify-content: space-evenly;
+  width: inherit;
+}
+
+@mixin input {
+  margin-right: 10px;
+  padding: 5px;
+  height: 30px;
+  background-color: $white;
+  font-size: 1rem;
+  font-family: arial, sans-serif;
+  border: 1px solid $black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@mixin buttonHover {
+  &:hover {
+    background-color: $black;
+    color: $white;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}

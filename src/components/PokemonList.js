@@ -106,7 +106,7 @@ const PokemonList = () => {
         <h2>Loading...</h2>
       ) : (
         <>
-          <div className="btn">
+          <div className="navigateButtons">
             <button onClick={prev}>Prev</button>
             <button onClick={next}>Next</button>
           </div>

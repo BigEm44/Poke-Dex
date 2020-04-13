@@ -30,8 +30,8 @@ const FilterPokemons = () => {
       <div className="filterPokemon__category">
         <div className="filterPokemon__category--name">
           <form onSubmit={handleNameSubmit}>
+            <h3>Enter pokemon name</h3>
             <label>
-              Enter pokemon name
               <input
                 type="text"
                 name="pokemonName"
@@ -43,8 +43,8 @@ const FilterPokemons = () => {
         </div>
         <div className="filterPokemon__category--type">
           <form onSubmit={handleTypeSubmit}>
+            <h3>Choose type</h3>
             <label>
-              Choose type:
               <select
                 name="pokemonType"
                 onChange={handleTypeChange}
@@ -64,8 +64,8 @@ const FilterPokemons = () => {
         </div>
         <div className="filterPokemon__category--ability">
           <form onSubmit={handleAbilitySubmit}>
+            <h3>Choose ability</h3>
             <label>
-              Choose ability:
               <select
                 name="pokemonAbility"
                 onChange={handleAbilityChange}

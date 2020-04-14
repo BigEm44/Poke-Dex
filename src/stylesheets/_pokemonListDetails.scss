@@ -6,14 +6,19 @@
   flex-direction: column;
   -webkit-box-align: center;
   align-items: center;
-  margin: 0.75vh;
+  margin: 4px;
   padding: 7px;
   width: 45vw;
   border: 1px solid $red;
   border-radius: 5px;
   background-image: -webkit-gradient(linear, left top, left bottom, from($lightPink), to($pink));
   background-image: linear-gradient($lightPink, $pink);
-
+  @media (min-width: 1000px) {
+    width: 30vw;
+  }
+  @media (min-width: 1200px) {
+    width: 22vw;
+  }
   h2 {
     font-size: 1.2rem;
     text-transform: uppercase;

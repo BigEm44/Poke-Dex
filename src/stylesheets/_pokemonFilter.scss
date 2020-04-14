@@ -16,12 +16,10 @@
     align-items: center;
     &--name {
       input {
-        //padding: 5px;
         width: 65vw;
         @include input;
       }
       button {
-        //padding: 5px;
         font-weight: bold;
         @include input;
         @include buttonHover;
@@ -29,13 +27,11 @@
     }
     &--type {
       form {
-        //padding: 5px;
         select {
           width: 40vw;
           @include input;
         }
         input {
-          //padding: 5px;
           font-weight: bold;
           @include input;
           @include buttonHover;

@@ -9,11 +9,42 @@
     display: flex;
     -webkit-box-align: start;
     align-items: flex-start;
-    margin-top: 16vh;
+    margin-top: 21vh;
+    @media (min-width: 360px) {
+      margin-top: 15vh;
+    }
+    @media (min-width: 385px) {
+      margin-top: 13vh;
+    }
+    @media (min-width: 410px) {
+      margin-top: 14vh;
+    }
+    @media (min-width: 768px) {
+      margin-top: 12vh;
+    }
+    @media (min-width: 800px) {
+      margin-top: 10vh;
+    }
+    @media (min-width: 568px) and(orientation:landscape) {
+      margin-top: 28vh;
+    }
+    @media (min-width: 640px) and(orientation:landscape) {
+      margin-top: 25vh;
+    }
+    @media (min-width: 960px) and(orientation:landscape) {
+      margin-top: 16vh;
+    }
+    @media (min-width: 1112px) and(orientation:landscape) {
+      margin-top: 14vh;
+    }
+    @media (min-width: 1366px) and(orientation:landscape) {
+      margin-top: 12vh;
+    }
     button {
       width: 45vw;
       margin: 0.75vh;
-      height: 4vh;
+      margin: 4px;
+      height: 32px;
       font-size: 1.3rem;
       @include button;
     }

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Poke-Dex/static/css/main.810caeda.chunk.css",
+    "main.js": "/Poke-Dex/static/js/main.7bd8dac0.chunk.js",
+    "main.js.map": "/Poke-Dex/static/js/main.7bd8dac0.chunk.js.map",
+    "runtime-main.js": "/Poke-Dex/static/js/runtime-main.941d876e.js",
+    "runtime-main.js.map": "/Poke-Dex/static/js/runtime-main.941d876e.js.map",
+    "static/js/2.f3b843a0.chunk.js": "/Poke-Dex/static/js/2.f3b843a0.chunk.js",
+    "static/js/2.f3b843a0.chunk.js.map": "/Poke-Dex/static/js/2.f3b843a0.chunk.js.map",
+    "index.html": "/Poke-Dex/index.html",
+    "precache-manifest.05f0a5a0b8a3542952e39af0ec395aab.js": "/Poke-Dex/precache-manifest.05f0a5a0b8a3542952e39af0ec395aab.js",
+    "service-worker.js": "/Poke-Dex/service-worker.js",
+    "static/css/main.810caeda.chunk.css.map": "/Poke-Dex/static/css/main.810caeda.chunk.css.map",
+    "static/js/2.f3b843a0.chunk.js.LICENSE.txt": "/Poke-Dex/static/js/2.f3b843a0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.941d876e.js",
+    "static/js/2.f3b843a0.chunk.js",
+    "static/css/main.810caeda.chunk.css",
+    "static/js/main.7bd8dac0.chunk.js"
+  ]
+}

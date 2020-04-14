@@ -8,7 +8,7 @@ const PokemonListContextProvider = (props) => {
   const [prevPage, setPrevPage] = useState('');
   const [loading, setLoading] = useState(true);
   const initialApi = 'https://pokeapi.co/api/v2/pokemon';
-  const filterApi = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=200';
+  const filterApi = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100';
 
   async function getAllPokemon(api) {
     return new Promise((resolve, reject) => {
@@ -17,8 +17,7 @@ const PokemonListContextProvider = (props) => {
         .then((data) => {
           resolve(data);
         })
-        //TO-DO BŁĘDY OBSŁUŻYĆ
-        .catch((err) => console.log('coś nie tak' + err));
+        .catch((err) => alert(err + 'Try to refresh page'));
     });
   }
 
@@ -29,8 +28,7 @@ const PokemonListContextProvider = (props) => {
         .then((data) => {
           resolve(data);
         })
-        //TO-DO BŁĘDY OBSŁUŻYĆ
-        .catch((err) => console.log('oops' + err));
+        .catch((err) => alert(err + 'Try to refresh page'));
     });
   }
 

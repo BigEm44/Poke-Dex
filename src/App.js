@@ -10,9 +10,7 @@ function App() {
       <PokemonListContextProvider>
         <PokemonFilterContextProvider>
           <Header />
-          {/* <ModalTrigger /> */}
           <PokemonList />
-          {/* <ModalContent /> */}
         </PokemonFilterContextProvider>
       </PokemonListContextProvider>
     </div>

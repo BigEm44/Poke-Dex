@@ -8,7 +8,9 @@ const PokemonFilterContextProvider = (props) => {
     setMenuToggle(!menu);
     setTypeFilter(false);
     setAbilityFilter(false);
+    setNameFilter(false);
   };
+
   const pokemonTypes = [
     { name: 'choose', id: 0 },
     { name: 'normal', id: 1 },
@@ -36,8 +38,8 @@ const PokemonFilterContextProvider = (props) => {
     e.preventDefault();
     setMenuToggle(false);
     setTypeFilter(true);
-    if (typeForm === 'choose') return;
   };
+
   const pokemonAbilities = [
     { name: 'choose', id: 0 },
     { name: 'blaze', id: 1 },
@@ -74,9 +76,10 @@ const PokemonFilterContextProvider = (props) => {
     setMenuToggle(false);
     setAbilityFilter(true);
   };
+
   const [nameForm, setNameForm] = useState('');
   const [nameFilter, setNameFilter] = useState(false);
-  const handleNameChange = (e) => setNameForm(e.target.value);
+  const handleNameChange = (e) => setNameForm(e.target.value.toLowerCase());
   const handleNameSubmit = (e) => {
     e.preventDefault();
     setMenuToggle(false);

@@ -1,19 +1,11 @@
-import React, { useContext, useState } from 'react';
-import { PokemonListContext } from '../context/PokemonListContext';
-import PokemonListDetails from './PokemonListDetails';
+import React, { useContext } from 'react';
 import { PokemonFilterContext } from '../context/PokemonFilterContext';
 
 const FilterPokemons = () => {
   const {
-    menu,
-    setMenuToggle,
-    menuToggle,
     pokemonTypes,
     typeForm,
     abilityForm,
-    typeFilter,
-    nameForm,
-    nameFilter,
     pokemonAbilities,
     handleTypeChange,
     handleTypeSubmit,
@@ -21,10 +13,8 @@ const FilterPokemons = () => {
     handleAbilitySubmit,
     handleNameChange,
     handleNameSubmit,
-    setTypeFilter,
-    setPokemonAbilities,
   } = useContext(PokemonFilterContext);
-  console.log(nameForm);
+
   return (
     <div className="filterPokemon">
       <div className="filterPokemon__category">

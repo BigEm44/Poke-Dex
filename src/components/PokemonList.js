@@ -5,7 +5,6 @@ import { PokemonFilterContext } from '../context/PokemonFilterContext';
 
 const PokemonList = () => {
   const {
-    api,
     initialApi,
     filterApi,
     pokemons,
@@ -18,23 +17,17 @@ const PokemonList = () => {
     setLoading,
     getPokemon,
     getAllPokemon,
-    getFilterPokemon,
   } = useContext(PokemonListContext);
   const {
     typeFilter,
-    setTypeFilter,
     abilityFilter,
     nameFilter,
-    menuToggle,
     typeForm,
-    setTypeForm,
     abilityForm,
     nameForm,
   } = useContext(PokemonFilterContext);
 
   useEffect(() => {
-    console.log(api);
-
     async function fetchData() {
       let response =
         typeFilter || abilityFilter || nameFilter
@@ -75,7 +68,7 @@ const PokemonList = () => {
       })
     );
 
-    //console.log(singlePokemon.filter((name) => name.name === nameForm));
+    console.log(singlePokemon.filter((name) => name.name === nameForm));
 
     switch (true) {
       case typeFilter:
@@ -98,8 +91,13 @@ const PokemonList = () => {
       default:
         setPokemons(singlePokemon);
     }
+    // if (nameFilter && singlePokemon.length === 200) {
+    //   alert('No Pokemon in data base. Please try again');
+    //   setPokemons(singlePokemon);
+    // }
+    console.log(singlePokemon);
   };
-
+  //console.log(pokemons);
   return (
     <div className="wrapper">
       {loading ? (
@@ -107,8 +105,8 @@ const PokemonList = () => {
       ) : (
         <>
           <div className="navigateButtons">
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
+            <button onClick={prev}>Prev Page</button>
+            <button onClick={next}>Next Page</button>
           </div>
           <div className="pokemonList">
             {pokemons.map((pokemon, index) => {

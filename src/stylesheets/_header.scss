@@ -10,8 +10,7 @@
   align-items: center;
   width: 100vw;
   height: 120px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from($yellow), to($darkYellow));
-  background-image: linear-gradient($yellow, $darkYellow);
+  background-color: $yellow;
   @media (min-width: 360px) {
     height: 90px;
   }
@@ -22,7 +21,6 @@
   }
   .menuBtn {
     width: 45vw;
-    //margin: 1vh 0 3vh 0;
     margin: 10px 0 3px 0;
     font-size: 1.3rem;
     padding: 2px;

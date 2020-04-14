@@ -1,5 +1,7 @@
 .filterPokemon {
   width: 100vw;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($yellow), to($darkYellow));
+  background-image: linear-gradient($yellow, $darkYellow);
   h3 {
     margin: 1vh 0;
     text-align: center;

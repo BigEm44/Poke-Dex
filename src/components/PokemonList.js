@@ -68,8 +68,6 @@ const PokemonList = () => {
       })
     );
 
-    console.log(singlePokemon.filter((name) => name.name === nameForm));
-
     switch (true) {
       case typeFilter:
         setPokemons(
@@ -91,13 +89,8 @@ const PokemonList = () => {
       default:
         setPokemons(singlePokemon);
     }
-    // if (nameFilter && singlePokemon.length === 200) {
-    //   alert('No Pokemon in data base. Please try again');
-    //   setPokemons(singlePokemon);
-    // }
-    console.log(singlePokemon);
   };
-  //console.log(pokemons);
+
   return (
     <div className="wrapper">
       {loading ? (

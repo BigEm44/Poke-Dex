@@ -12,7 +12,6 @@ const PokemonFilterContextProvider = (props) => {
   };
 
   const pokemonTypes = [
-    { name: 'choose', id: 0 },
     { name: 'normal', id: 1 },
     { name: 'fighting', id: 2 },
     { name: 'poison', id: 3 },
@@ -31,7 +30,7 @@ const PokemonFilterContextProvider = (props) => {
     { name: 'fairy', id: 16 },
     { name: 'dark', id: 17 },
   ];
-  const [typeForm, setTypeForm] = useState('choose');
+  const [typeForm, setTypeForm] = useState('normal');
   const [typeFilter, setTypeFilter] = useState(false);
   const handleTypeChange = (e) => setTypeForm(e.target.value);
   const handleTypeSubmit = (e) => {
@@ -41,7 +40,6 @@ const PokemonFilterContextProvider = (props) => {
   };
 
   const pokemonAbilities = [
-    { name: 'choose', id: 0 },
     { name: 'blaze', id: 1 },
     { name: 'chlorophyll', id: 2 },
     { name: 'clear-body', id: 3 },
@@ -68,7 +66,7 @@ const PokemonFilterContextProvider = (props) => {
     { name: 'torrent', id: 24 },
     { name: 'water-absorb', id: 25 },
   ];
-  const [abilityForm, setAbilityForm] = useState('choose');
+  const [abilityForm, setAbilityForm] = useState('blaze');
   const [abilityFilter, setAbilityFilter] = useState(false);
   const handleAbilityChange = (e) => setAbilityForm(e.target.value);
   const handleAbilitySubmit = (e) => {

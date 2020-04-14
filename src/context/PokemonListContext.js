@@ -8,7 +8,7 @@ const PokemonListContextProvider = (props) => {
   const [prevPage, setPrevPage] = useState('');
   const [loading, setLoading] = useState(true);
   const initialApi = 'https://pokeapi.co/api/v2/pokemon';
-  const filterApi = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100';
+  const filterApi = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964';
 
   async function getAllPokemon(api) {
     return new Promise((resolve, reject) => {
@@ -17,7 +17,9 @@ const PokemonListContextProvider = (props) => {
         .then((data) => {
           resolve(data);
         })
-        .catch((err) => alert(err + 'Try to refresh page'));
+        .catch((err) => {
+          alert(err + 'Try to refresh page');
+        });
     });
   }
 

@@ -74,19 +74,6 @@ const FilterPokemons = () => {
           </form>
         </div>
       </div>
-      {/* <div className="filterPokemon__nameFilter">
-        <form onSubmit={handleNameSubmit}>
-          <label>
-            Enter pokemon name
-            <input
-              type="text"
-              name="pokemonName"
-              onChange={handleNameChange}
-            ></input>
-            <button>Apply</button>
-          </label>
-        </form>
-      </div> */}
     </div>
   );
 };

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Poke-Dex/static/css/main.10aab565.chunk.css",
-    "main.js": "/Poke-Dex/static/js/main.fddfb721.chunk.js",
-    "main.js.map": "/Poke-Dex/static/js/main.fddfb721.chunk.js.map",
+    "main.css": "/Poke-Dex/static/css/main.c8796f50.chunk.css",
+    "main.js": "/Poke-Dex/static/js/main.93c22092.chunk.js",
+    "main.js.map": "/Poke-Dex/static/js/main.93c22092.chunk.js.map",
     "runtime-main.js": "/Poke-Dex/static/js/runtime-main.941d876e.js",
     "runtime-main.js.map": "/Poke-Dex/static/js/runtime-main.941d876e.js.map",
     "static/js/2.f3b843a0.chunk.js": "/Poke-Dex/static/js/2.f3b843a0.chunk.js",
     "static/js/2.f3b843a0.chunk.js.map": "/Poke-Dex/static/js/2.f3b843a0.chunk.js.map",
     "index.html": "/Poke-Dex/index.html",
-    "precache-manifest.87fee88231906f0b93a92a1e70fe3039.js": "/Poke-Dex/precache-manifest.87fee88231906f0b93a92a1e70fe3039.js",
+    "precache-manifest.0956b2d05550123edaa9924d24672fdf.js": "/Poke-Dex/precache-manifest.0956b2d05550123edaa9924d24672fdf.js",
     "service-worker.js": "/Poke-Dex/service-worker.js",
-    "static/css/main.10aab565.chunk.css.map": "/Poke-Dex/static/css/main.10aab565.chunk.css.map",
+    "static/css/main.c8796f50.chunk.css.map": "/Poke-Dex/static/css/main.c8796f50.chunk.css.map",
     "static/js/2.f3b843a0.chunk.js.LICENSE.txt": "/Poke-Dex/static/js/2.f3b843a0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.941d876e.js",
     "static/js/2.f3b843a0.chunk.js",
-    "static/css/main.10aab565.chunk.css",
-    "static/js/main.fddfb721.chunk.js"
+    "static/css/main.c8796f50.chunk.css",
+    "static/js/main.93c22092.chunk.js"
   ]
 }

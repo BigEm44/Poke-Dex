@@ -18,7 +18,7 @@ const PokemonListContextProvider = (props) => {
           resolve(data);
         })
         .catch((err) => {
-          alert(err + 'Try to refresh page');
+          alert(err + ' Try to refresh page');
         });
     });
   }
@@ -30,7 +30,7 @@ const PokemonListContextProvider = (props) => {
         .then((data) => {
           resolve(data);
         })
-        .catch((err) => alert(err + 'Try to refresh page'));
+        .catch((err) => alert(err + ' Try to refresh page'));
     });
   }
 

@@ -23,14 +23,17 @@ $black: rgb(0, 0, 0);
     background-color: $blue;
     color: white;
     -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
   }
 }
 
 @mixin layout {
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   width: inherit;
 }
@@ -52,6 +55,7 @@ $black: rgb(0, 0, 0);
     background-color: $black;
     color: $white;
     -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
   }
 }

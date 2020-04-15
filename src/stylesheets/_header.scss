@@ -1,19 +1,19 @@
 .header {
   position: fixed;
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
   -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100vw;
-  height: 120px;
+  min-height: 90px;
   background-color: $yellow;
-  @media (min-width: 360px) {
-    height: 90px;
-  }
   h1 {
     font-size: 1.9rem;
     text-transform: uppercase;
@@ -21,7 +21,7 @@
   }
   .menuBtn {
     width: 45vw;
-    margin: 10px 0 3px 0;
+    margin: 8px 0 3px 0;
     font-size: 1.3rem;
     padding: 2px;
     @include button;

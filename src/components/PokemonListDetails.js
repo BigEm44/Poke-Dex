@@ -18,7 +18,7 @@ const PokemonListDetails = ({ pokemon }) => {
         </div>
       </div>
       <h3>Type:</h3>
-      <div className="pokemonListDetails__types">
+      <div data-testid="detailsTypes" className="pokemonListDetails__types">
         {pokemon.types.map((type, index) => {
           return (
             <div className="pokemonListDetails__type" key={index}>

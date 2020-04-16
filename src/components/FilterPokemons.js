@@ -39,6 +39,7 @@ const FilterPokemons = () => {
                 name="pokemonType"
                 onChange={handleTypeChange}
                 value={typeForm}
+                data-testid="types"
               >
                 {pokemonTypes.map((type) => {
                   return (
@@ -60,6 +61,7 @@ const FilterPokemons = () => {
                 name="pokemonAbility"
                 onChange={handleAbilityChange}
                 value={abilityForm}
+                data-testid="abilities"
               >
                 {pokemonAbilities.map((ability) => {
                   return (
